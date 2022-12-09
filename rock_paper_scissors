@@ -28,35 +28,37 @@ scissors = '''
 
 #Write your code below this line 👇
 import random
-user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors."))
-if user_choice == 0:
-    print("You chose Rock",rock)
-elif user_choice == 1:
-    print("You chose  Paper",paper)
-elif user_choice == 2:
-    print("You chose Scissors",scissors)
-else:
-    print("Invalid choice")
+game_images = [rock,paper,scissors]         # putting all images in a list
 
-comp_choice = random.randint(0,2)
-if comp_choice == 0:
-    print("Computer chose  Rock",rock)
-elif comp_choice == 1:
-    print("Computer chose Paper",paper)
-elif comp_choice == 2:
-    print("Computer chose Scissors",scissors)
-else:
-    print("Invalid choice")
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors."))       #taking input from user
 
-if user_choice == 0 and comp_choice == 2:
-    print("You win!")
-elif user_choice == 2 and comp_choice == 0:
-    print("You lose!")
-elif user_choice == comp_choice:
-    print("Game draw!")
-elif user_choice > comp_choice:
-    print("You win!")
-elif user_choice < comp_choice:
-    print("You lose!")
-else:
+comp_choice = random.randint(0,2)       #generating random input for computer
+
+if user_choice >= 3 or user_choice < 0:              #validating user input
     print("You typed an invalid number, you lose!")
+else:
+    if user_choice == 0:
+        print("You chose Rock",game_images[0])
+    elif user_choice == 1:
+        print("You chose  Paper",game_images[1])
+    elif user_choice == 2:
+        print("You chose Scissors",game_images[2])
+
+    if comp_choice == 0:
+        print("Computer chose  Rock",game_images[0])
+    elif comp_choice == 1:
+        print("Computer chose Paper",game_images[1])
+    elif comp_choice == 2:
+        print("Computer chose Scissors",game_images[2])
+    
+    
+    if user_choice == 0 and comp_choice == 2:
+        print("You win!")
+    elif user_choice == 2 and comp_choice == 0:
+        print("You lose!")
+    elif user_choice == comp_choice:
+        print("Game draw!")
+    elif user_choice > comp_choice:
+        print("You win!")
+    elif user_choice < comp_choice:
+        print("You lose!")
